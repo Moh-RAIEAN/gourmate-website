@@ -1,0 +1,194 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    line-height: 1.5;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+}
+body,ul{
+    padding: 0;
+    margin: 0;
+}
+header h1{
+    text-align: center;
+    font-size: 1.5rem;
+}
+/* navigation bar */
+nav{
+    background-color: rgba(204, 204, 204,.8);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+nav > ul{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+ul{
+    list-style: none;
+    position: relative;
+}
+li ul{
+padding: 0;
+}
+li:nth-child(2){
+    margin-right: auto;
+}
+li.hideOnSmall{
+    display: none;
+}
+nav > ul > li > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul li a{
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+.dropBtn:hover,li a:hover{
+    background-color: rgb(202, 202, 202);
+    transition: .3s;
+}
+.dropBtn .dropdown{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+    background-color: rgb(148, 148, 148);
+}
+.dropBtn:hover .dropdown{
+    display: block;
+}
+section{
+    margin-bottom: 3rem;
+}
+.banner{
+    position: relative;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+.banner .bannerTitle{
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+    color: rgb(204, 204, 204);
+    font-weight: bold;
+    text-shadow: 0 0 5px black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-size: 30px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.container .banner img{
+    height: 100%;
+    display: inline-block;
+    object-fit: cover;
+    padding: 0 15px;
+}
+.banner,.content{
+    flex-basis: 50%;
+}
+.content{
+    padding: 0 15px;
+    text-align: justify;
+}
+.content .contentTitle{
+    text-align: center;
+}
+.contact .address{
+    color: royalblue;
+    font-weight: bold;
+}
+.formContainer{
+    padding: 0 15px;
+}
+input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    margin-bottom: 10px;
+}
+input[type="date"]{
+    background-color: lightgrey;
+}
+input:focus{
+    border: 1px solid black;
+}
+button{
+    padding: 10px 15px;
+    background-color: #ccc;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: .4s ease;
+    margin-bottom: 15px;
+}
+button:hover{
+    background-color: grey;
+}
+@media screen and (min-width:568px) {
+    header h1{
+        font-size: 3rem;
+    }
+    /* navigation bar */
+    nav > ul{
+        flex-direction: row;
+        padding: 5px;
+    } 
+    li:first-child{
+        margin-right: auto;
+    }
+    li:nth-child(2){
+        margin-left: auto;
+        margin-right: 0;
+    }
+    li.hideOnSmall{
+        display: block;
+    }
+    .dropBtn{
+        display: none;
+    }
+    /* navigation bar end */
+    .banner .bannerTitle{
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width:830px) {
+    .container{
+        flex-direction: column;
+    }
+    .container .banner{
+        order: 1;
+    }
+    .container .banner img{
+        height: auto;
+    }
+    .content{
+        text-align: left;
+    }
+}
